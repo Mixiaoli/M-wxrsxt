@@ -1,7 +1,9 @@
 package com.mixiao.emos.wx.db.dao;
 
 import com.mixiao.emos.wx.db.pojo.TbAction;
+import org.apache.ibatis.annotations.Mapper;
 
+@Mapper
 public interface TbActionDao {
     int deleteByPrimaryKey(Integer id);
 

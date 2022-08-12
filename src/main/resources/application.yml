@@ -53,8 +53,14 @@ spring:
 
 mybatis:
   mapper-locations: classpath*:mapper/*.xml
-  type-aliases-package: com.example.emos.wx.db.pojo
+  type-aliases-package: com.mixiao.emos.wx.db.pojo
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    map-underscore-to-camel-case: true
+    map-underscore-to-camel-case: true #支持驼峰命名法
 
+logging:
+  level:
+    root: info #日志输出级别
+    com.mixiao.emos.wx.db.dao : warn #警告级别
+  pattern:
+    console: "%d{HH:mm:ss}  %-5level  %msg%n"
