@@ -3,17 +3,40 @@ package com.mixiao.emos.wx.db.dao;
 import com.mixiao.emos.wx.db.pojo.TbUser;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
+
 @Mapper
 public interface TbUserDao {
-    int deleteByPrimaryKey(Integer id);
+    public boolean haveRootUser();
 
-    int insert(TbUser record);
+    public int insert(HashMap param);
 
-    int insertSelective(TbUser record);
+    public Integer searchIdByOpenId(String openId);
 
-    TbUser selectByPrimaryKey(Integer id);
+    public Set<String> searchUserPermissions(int userId);
 
-    int updateByPrimaryKeySelective(TbUser record);
+    public TbUser searchById(int userId);
 
-    int updateByPrimaryKey(TbUser record);
+    public HashMap searchNameAndDept(int userId);
+
+    public String searchUserHiredate(int userId);
+
+    public HashMap searchUserSummary(int userId);
+
+    public ArrayList<HashMap> searchUserGroupByDept(String keyword);
+
+    public ArrayList<HashMap> searchMembers(List param);
+
+    public HashMap searchUserInfo(int userId);
+
+    public int searchDeptManagerId(int id);
+
+    public int searchGmId();
+
+    public List<HashMap> selectUserPhotoAndName(List param);
+
+    public String searchMemberEmail(int id);
 }
